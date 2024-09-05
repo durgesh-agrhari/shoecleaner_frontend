@@ -107,7 +107,9 @@ const OrderPlacedScreen = () => {
             </View>
             <Button
               mode="outlined"
-              onPress={() => console.log('Change address')}>
+              onPress={() => {
+                navigation.navigate('ShowLocationScreen');
+              }}>
               Change
             </Button>
           </View>
@@ -118,7 +120,10 @@ const OrderPlacedScreen = () => {
           onPress={() => {
             navigation.navigate('OrderPlacedSucessfully');
           }}>
-          Place Order
+          <Text style={{color: 'black', fontSize: 20, fontWeight: 'bold'}}>
+            {' '}
+            Place Order
+          </Text>
         </Button>
       </ScrollView>
     </SafeAreaView>
@@ -153,7 +158,7 @@ const styles = StyleSheet.create({
   },
   card: {
     marginBottom: 16,
-    backgroundColor: '#5F95FF',
+    backgroundColor: '#4069B2',
   },
   cardContent: {
     flexDirection: 'row',
@@ -212,6 +217,7 @@ const styles = StyleSheet.create({
   placeOrderButton: {
     marginTop: 20,
     backgroundColor: '#ffa000',
+    borderRadius: 10,
   },
 });
 

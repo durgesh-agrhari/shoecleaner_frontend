@@ -5,6 +5,7 @@ import {
   StyleSheet,
   SafeAreaView,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 import {Text, Card, List, Divider} from 'react-native-paper';
 import {useNavigation, NavigationProp} from '@react-navigation/native';
@@ -22,14 +23,48 @@ const OrderTracking = () => {
           <Icon source="arrow-left" size={30} color={'#EAEAEA'} />
         </View>
         <View style={{marginLeft: 10}}>
-          <Text style={styles.headerText}>My Cart</Text>
+          <Text style={styles.headerText}>Track Order</Text>
         </View>
       </TouchableOpacity>
       <Card style={styles.card}>
-        <Card.Title
-          title="Washing"
-          right={() => <Text style={styles.price}>₹100</Text>}
-        />
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            backgroundColor: '#5F95FF',
+            padding: 8,
+            borderRadius: 10,
+          }}>
+          <View>
+            <Image
+              source={{
+                uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTUzp5xmVe86B0Fgo7T4tKv36cm8y0M9Dsfg&s',
+              }}
+              style={styles.imagewash}
+            />
+          </View>
+          <View>
+            <Text style={{color: 'white', fontSize: 20}}>Washhing</Text>
+            <Text style={{color: 'white', fontSize: 16}}>Item 1</Text>
+          </View>
+          <View>
+            <Text
+              style={{
+                color: 'black',
+                fontSize: 18,
+                fontWeight: 'bold',
+                backgroundColor: '#D9D9D9',
+                padding: 5,
+                paddingLeft: 8,
+                paddingRight: 8,
+                borderRadius: 8,
+              }}>
+              ₹100
+            </Text>
+          </View>
+        </View>
+
         <Card.Content>
           <View style={styles.timelineContainer}>
             <List.Item
@@ -69,14 +104,14 @@ const OrderTracking = () => {
 
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Delivery address</Text>
-        <Text>
+        <Text style={{color: 'white'}}>
           Number 12, AB tower opposite, 5th cross street, Anna Nagar, Bangalore,
           Karnataka
         </Text>
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Order Information</Text>
+      <View style={styles.section2}>
+        <Text style={styles.sectionTitle2}>Order Information</Text>
         <Text>Order No.: #0001</Text>
         <Text>Service: Washing</Text>
         <Text>Order date: 24/08/2024</Text>
@@ -102,7 +137,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
   },
+  imagewash: {
+    width: 70,
+    height: 70,
+    borderRadius: 10,
+  },
   card: {
+    marginTop: 20,
     marginBottom: 16,
     marginHorizontal: 20,
   },
@@ -110,18 +151,33 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: '#00c853',
+    marginRight: 20,
   },
   timelineContainer: {
     marginTop: 8,
   },
   section: {
     marginBottom: 16,
-    backgroundColor: '#fff',
+    backgroundColor: '#5F95FF',
+    padding: 16,
+    borderRadius: 8,
+    marginHorizontal: 20,
+  },
+  section2: {
+    marginBottom: 16,
+    backgroundColor: 'white',
     padding: 16,
     borderRadius: 8,
     marginHorizontal: 20,
   },
   sectionTitle: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 8,
+  },
+  sectionTitle2: {
+    color: 'black',
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 8,

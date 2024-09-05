@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity, SafeAreaView} from 'react-native';
 import {Button, Card} from 'react-native-paper';
 // import {useNavigation} from '@react-navigation/native';
 import {useNavigation, NavigationProp} from '@react-navigation/native';
@@ -56,7 +56,7 @@ const LaundaryServiceScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {/* Header Section */}
       <TouchableOpacity
         style={styles.header}
@@ -105,7 +105,7 @@ const LaundaryServiceScreen = () => {
           </View>
         </Card>
       ))}
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   serviceCard: {
-    backgroundColor: '#4A90E2',
+    backgroundColor: '#4069B2',
     marginHorizontal: 15,
     marginVertical: 10,
     padding: 10,

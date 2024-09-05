@@ -1,26 +1,32 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, View, Image, Text} from 'react-native';
+import {StyleSheet, View, Image, Text, SafeAreaView} from 'react-native';
 import {useNavigation, NavigationProp} from '@react-navigation/native';
 
-const OrderPlacedSucessfully: React.FC = () => {
+const OrderPlacedSuccessfully: React.FC = () => {
   const navigation = useNavigation<NavigationProp<any>>();
-  useEffect(() => {
-    handleOTPSubmit();
-  }, [1500]);
 
-  const handleOTPSubmit = () => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      handleNavigation();
+    }, 2000);
+
+    // Clear the timeout if the component is unmounted before the timer ends
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleNavigation = () => {
     navigation.navigate('HomeScreen');
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Image source={require('../../assets/done.jpg')} style={styles.image} />
       <Text style={styles.text}>Order placed successfully</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 
-export default OrderPlacedSucessfully;
+export default OrderPlacedSuccessfully;
 
 const styles = StyleSheet.create({
   container: {

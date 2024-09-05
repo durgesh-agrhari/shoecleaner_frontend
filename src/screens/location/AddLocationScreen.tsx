@@ -1,92 +1,127 @@
-import React, { useEffect } from 'react';
-import {StyleSheet, View, Image, Text, Touchable, TouchableOpacity} from 'react-native';
-import { useNavigation, NavigationProp } from '@react-navigation/native';
+import React, {useState} from 'react';
+import {SafeAreaView, ScrollView, StyleSheet, View} from 'react-native';
+import {Text, TextInput, Button, IconButton} from 'react-native-paper';
+import {useNavigation, NavigationProp} from '@react-navigation/native';
+import {Icon} from 'react-native-paper';
 
-
-const AddLocationScreen: React.FC = () => {
+const AddLocationScreen = () => {
   const navigation = useNavigation<NavigationProp<any>>();
 
-  return (
-    <View style={styles.container}>
-      <View >
-        <View style={styles.map}>
-      <Image
-        source={require('../../assets/map.jpg')}
-        style={styles.image}
-      />
-      </View>
-      <Text style={{fontSize:25,textAlign:'center', fontWeight:'600', color:'white', marginBottom:20}}>Allow your location </Text>
-      <Text style={{fontSize:18,textAlign:'center', fontWeight:'600', color:'white'}}>We will need your location for better </Text>
-      <Text style={{fontSize:18,textAlign:'center', fontWeight:'600', color:'white'}}> experience</Text>
-      
-      <TouchableOpacity style={styles.btn} onPress={() => {
-        navigation.navigate("BottomTabs");
-       }
-      } >
-      <Text style={styles.text}>
-        Next
-      </Text>
-      </TouchableOpacity>
+  const [addressTitle, setAddressTitle] = useState('');
+  const [flatDetails, setFlatDetails] = useState('');
+  const [areaDetails, setAreaDetails] = useState('');
+  const [landmark, setLandmark] = useState('');
+  const [pincode, setPincode] = useState('');
 
-      <TouchableOpacity style={styles.btn2} onPress={() => {
-        navigation.navigate("BottomTabs");
-       }
-      }>
-      <Text style={styles.text2}>
-        Not now
-      </Text>
-      </TouchableOpacity>
+  const handleSave = () => {
+    // Handle save action here
+  };
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.headerRow}>
+        <IconButton
+          icon="arrow-left"
+          size={24}
+          onPress={() => {
+            navigation.navigate('ShowLocationScreen');
+          }}
+          style={styles.backButton}
+        />
+        <Text style={styles.header}>Saved locations</Text>
       </View>
-    </View>
+      <ScrollView style={{marginHorizontal: 20}}>
+        <TextInput
+          label="Address title"
+          value={addressTitle}
+          onChangeText={setAddressTitle}
+          style={styles.input}
+          mode="outlined"
+        />
+
+        <Button
+          mode="contained"
+          icon="map-marker"
+          onPress={() => {}}
+          style={styles.locationButton}>
+          Use my location
+        </Button>
+
+        <TextInput
+          label="Flat, House no., Building, Company, Apartment"
+          value={flatDetails}
+          onChangeText={setFlatDetails}
+          style={styles.input}
+          mode="flat"
+        />
+
+        <TextInput
+          label="Area, Street, Sector"
+          value={areaDetails}
+          onChangeText={setAreaDetails}
+          style={styles.input}
+          mode="flat"
+        />
+
+        <TextInput
+          label="Landmark"
+          value={landmark}
+          onChangeText={setLandmark}
+          style={styles.input}
+          mode="flat"
+        />
+
+        <TextInput
+          label="Pincode"
+          value={pincode}
+          onChangeText={setPincode}
+          style={styles.input}
+          mode="flat"
+        />
+
+        <Button mode="contained" onPress={handleSave} style={styles.saveButton}>
+          Save
+        </Button>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
-
-export default AddLocationScreen;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    // padding: 16,
+    backgroundColor: '#f5f5f5',
+  },
+  headerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 16,
     backgroundColor: '#5F95FF',
-    justifyContent: 'center',
-    alignItems: 'center',
-
   },
-  map:{
-    justifyContent: 'center',
-    alignItems: 'center',
+  backButton: {
+    marginRight: 8,
   },
-  image: {
-    height: 200,
-    width: 200,
-    
+  header: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: 'white',
   },
-  text: {
-    color: 'black',
-    fontSize: 25,
-    textAlign:'center',
-    padding:8,
+  input: {
+    marginBottom: 16,
+    backgroundColor: '#ffffff',
   },
-  text2: {
-    color: '#FEE000',
-    fontSize: 25,
-    textAlign:'center',
-    padding:8,
+  locationButton: {
+    marginBottom: 16,
+    backgroundColor: '#4069B2',
+    borderRadius: 10,
+    marginHorizontal: 40,
   },
-  skip:{
-    marginTop:20,
-    marginLeft:320
+  saveButton: {
+    marginTop: 32,
+    backgroundColor: '#ffbf00',
+    borderRadius: 10,
   },
-  btn:{
-    backgroundColor:'#FEE000',
-    marginHorizontal:0,
-    borderRadius:10,
-    marginTop:60,
-  },
-  btn2:{
-    borderColor:'#FEE000',
-    borderWidth:2,
-    marginHorizontal:0,
-    borderRadius:10,
-    marginTop:20,
-  }
 });
+
+export default AddLocationScreen;

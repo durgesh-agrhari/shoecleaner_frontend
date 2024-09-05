@@ -18,8 +18,9 @@ import CartScreen from '../screens/Cart/CartScreen';
 import OrderPlacedScreen from '../screens/Order/OrderPlacedScreen';
 import OrderPlacedSucessfully from '../screens/Order/OrderPlacedSucessfully';
 import OrderTracking from '../screens/Order/OrderTracking';
-// import HomeScreen from '../screens/Dashboad/HomeScreen';
-// import OrderScreen from '../screens/Order/OrderScreen';
+import ShowLocationScreen from '../screens/location/ShowLocationScreen';
+import LocationPermission from '../screens/location/LocationPermission';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -45,6 +46,14 @@ const AppNavigator = () => {
         <Stack.Screen name="CartScreen" component={CartScreen} />
         <Stack.Screen name="OrderTracking" component={OrderTracking} />
         <Stack.Screen name="OrderPlacedScreen" component={OrderPlacedScreen} />
+        <Stack.Screen
+          name="LocationPermission"
+          component={LocationPermission}
+        />
+        <Stack.Screen
+          name="ShowLocationScreen"
+          component={ShowLocationScreen}
+        />
         <Stack.Screen
           name="OrderPlacedSucessfully"
           component={OrderPlacedSucessfully}

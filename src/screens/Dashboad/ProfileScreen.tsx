@@ -1,10 +1,19 @@
 import React from 'react';
-import {View, StyleSheet, Image} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Image,
+  SafeAreaView,
+  Touchable,
+  TouchableOpacity,
+} from 'react-native';
 import {Text, TextInput, Button, Avatar} from 'react-native-paper';
+import {useNavigation, NavigationProp} from '@react-navigation/native';
 
 const ProfileScreen = () => {
+  const navigation = useNavigation<NavigationProp<any>>();
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Profile</Text>
       <Avatar.Image
         size={120}
@@ -43,11 +52,29 @@ const ProfileScreen = () => {
 
       <Button
         mode="contained"
-        onPress={() => console.log('Saved locations pressed')}
+        onPress={() => {
+          navigation.navigate('ShowLocationScreen');
+        }}
         style={styles.button}>
         Saved locations
       </Button>
-    </View>
+
+      {/* <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('AdminBottomTabs');
+        }}
+        style={styles.Adminbutton}>
+        <Text
+          style={{
+            color: 'black',
+            fontWeight: 'bold',
+            fontSize: 20,
+            textAlign: 'center',
+          }}>
+          Switch to Admin Destboard
+        </Text>
+      </TouchableOpacity> */}
+    </SafeAreaView>
   );
 };
 
@@ -87,6 +114,15 @@ const styles = StyleSheet.create({
     padding: 8,
     borderRadius: 8,
     backgroundColor: '#3f51b5',
+    marginHorizontal: 20,
+  },
+  Adminbutton: {
+    backgroundColor: 'gold',
+    borderColor: 'red',
+    borderWidth: 4,
+    borderRadius: 10,
+    padding: 10,
+    marginTop: 30,
     marginHorizontal: 20,
   },
 });

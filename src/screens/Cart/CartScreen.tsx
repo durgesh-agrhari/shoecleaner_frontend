@@ -107,9 +107,12 @@ const CartScreen = () => {
           // onPress={() => navigation.navigate('HomeScreen')}
         >
           <View></View>
-          <View style={styles.addmore}>
+          <TouchableOpacity style={styles.addmore}  onPress={() => {
+          navigation.navigate('LaundaryServiceScreen');
+        }}
+        >
             <Text style={styles.addMoreButton}>+ Add more</Text>
-          </View>
+          </TouchableOpacity>
         </TouchableOpacity>
       </View>
       <View style={styles.totalPriceContainer}>
@@ -161,7 +164,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     marginBottom: 15,
     padding: 10,
-    backgroundColor: '#5F95FF',
+    backgroundColor: '#4069B2',
   },
   cartItemContent: {
     flexDirection: 'row',
@@ -199,7 +202,7 @@ const styles = StyleSheet.create({
   addMoreButton: {
     color: 'black',
     fontSize: 16,
-    // marginTop: 10,
+    fontWeight:'bold',
     marginHorizontal: 30,
   },
   plusbc: {
@@ -224,6 +227,7 @@ const styles = StyleSheet.create({
   totalPriceText: {
     fontSize: 18,
     fontWeight: 'bold',
+    color:'black'
   },
   totalPriceValue: {
     fontSize: 18,
@@ -233,5 +237,6 @@ const styles = StyleSheet.create({
   proceedButton: {
     backgroundColor: '#FEB737',
     marginHorizontal: 30,
+    borderRadius: 10,
   },
 });

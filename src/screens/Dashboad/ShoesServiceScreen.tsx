@@ -1,7 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { Button, Card } from 'react-native-paper';
-import { useNavigation } from '@react-navigation/native';
+import React, {useEffect, useState} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  SafeAreaView,
+} from 'react-native';
+import {Button, Card} from 'react-native-paper';
+import {useNavigation} from '@react-navigation/native';
 
 type ServiceItem = {
   id: string;
@@ -50,7 +57,7 @@ const ShoeServiceScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {/* Header Section */}
       <View style={styles.header}>
         <Text style={styles.headerText}>Quick Services</Text>
@@ -59,16 +66,16 @@ const ShoeServiceScreen = () => {
       {/* Sale Banner */}
       <Card style={styles.bannerCard}>
         <Image
-          source={{ uri: 'https://example.com/banner.png' }} // Replace with actual banner image URI
+          source={{uri: 'https://example.com/banner.png'}} // Replace with actual banner image URI
           style={styles.bannerImage}
         />
       </Card>
 
       {/* Services List */}
-      {services.map((item) => (
+      {services.map(item => (
         <Card key={item.id} style={styles.serviceCard}>
           <View style={styles.serviceContent}>
-            <Image source={{ uri: item.image }} style={styles.serviceImage} />
+            <Image source={{uri: item.image}} style={styles.serviceImage} />
             <View style={styles.serviceInfo}>
               <Text style={styles.serviceName}>{item.name}</Text>
               <Text style={styles.servicePrice}>{item.price}</Text>
@@ -76,14 +83,13 @@ const ShoeServiceScreen = () => {
             <Button
               mode="contained"
               onPress={() => handleAddToCart(item)}
-              style={styles.addButton}
-            >
+              style={styles.addButton}>
               Add
             </Button>
           </View>
         </Card>
       ))}
-    </View>
+    </SafeAreaView>
   );
 };
 

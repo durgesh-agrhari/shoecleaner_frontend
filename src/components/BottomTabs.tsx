@@ -3,20 +3,11 @@ import {View, Text, StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomTabBarHeightContext} from '@react-navigation/bottom-tabs';
 const Tab = createBottomTabNavigator();
-// import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {Icon, MD3Colors} from 'react-native-paper';
+import {Icon} from 'react-native-paper';
 import HomeScreen from '../screens/Dashboad/HomeScreen';
 import ProfileScreen from '../screens/Dashboad/ProfileScreen';
 import OrderScreen from '../screens/Order/OrderScreen';
 import OffersScreen from '../screens/Offers/OffersScreen';
-
-function SettingsScreen() {
-  return (
-    <View style={styles.container}>
-      <Text>Settings Screen</Text>
-    </View>
-  );
-}
 
 const BottomTabs: React.FC = () => {
   return (
@@ -65,7 +56,6 @@ const BottomTabs: React.FC = () => {
               },
             }}
           />
-
           <Tab.Screen
             name="OffersScreen"
             component={OffersScreen}
@@ -75,7 +65,7 @@ const BottomTabs: React.FC = () => {
                 return (
                   <View style={[styles.box, {paddingBottom: focused ? 10 : 5}]}>
                     <Icon
-                      source="offer"
+                      source="sale"
                       size={size}
                       color={focused ? '#FFD600' : '#EAEAEA'}
                     />

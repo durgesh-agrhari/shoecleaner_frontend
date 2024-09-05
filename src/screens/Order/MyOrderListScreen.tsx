@@ -7,6 +7,7 @@ import {
   Image,
   ActivityIndicator,
   TouchableOpacity,
+  SafeAreaView,
 } from 'react-native';
 import {Searchbar, Card} from 'react-native-paper';
 
@@ -63,7 +64,7 @@ const MyOrderListScreen = () => {
   );
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.title}>My Orders</Text>
       <Searchbar
         placeholder="Search in orders"
@@ -81,7 +82,7 @@ const MyOrderListScreen = () => {
           contentContainerStyle={styles.list}
         />
       )}
-    </View>
+    </SafeAreaView>
   );
 };
 

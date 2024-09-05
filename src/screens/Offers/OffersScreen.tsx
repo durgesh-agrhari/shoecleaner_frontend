@@ -36,7 +36,7 @@ const OffersScreen = () => {
       <View style={{backgroundColor: '#5F95FF'}}>
         <Text style={styles.header}>Offers</Text>
       </View>
-      <ScrollView style={{marginHorizontal: 20, marginTop:20}}>
+      <ScrollView style={{marginHorizontal: 20, marginTop: 20}}>
         <Card style={styles.specialOfferCard}>
           <View style={styles.specialOfferContent}>
             <Text style={styles.specialOfferText}>Special Offers 🎉</Text>
@@ -62,7 +62,7 @@ const OffersScreen = () => {
           description="Get 50% off on all shoe polishing services. Make your shoes shine like new!"
           validUntil="August 31, 2024"
           backgroundColor="#ffe6e6"
-          badgeText="-50%"
+          badgeText="50%"
           badgeColor="#d32f2f"
         />
       </ScrollView>
@@ -80,12 +80,12 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 24,
     fontWeight: 'bold',
-    padding: 10,
+    padding: 15,
     // marginBottom: 16,
   },
   specialOfferCard: {
     marginBottom: 16,
-    backgroundColor: '#e6f7ff',
+    backgroundColor: '#5F95FF',
     padding: 16,
     borderRadius: 8,
   },
@@ -95,15 +95,18 @@ const styles = StyleSheet.create({
   specialOfferText: {
     fontSize: 18,
     fontWeight: 'bold',
+    color: 'white',
   },
   specialOfferDescription: {
     textAlign: 'center',
     marginTop: 8,
+    color: 'white',
   },
   sectionTitle: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
     marginVertical: 16,
+    textAlign: 'center',
   },
   card: {
     marginBottom: 16,

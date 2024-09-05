@@ -8055,7 +8055,65 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-paper@npm:^5.12.5":
+"react-native-element-dropdown@npm:^2.12.1":
+  version: 2.12.1
+  resolution: "react-native-element-dropdown@npm:2.12.1"
+  dependencies:
+    lodash: ^4.17.21
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 5eaa4a78a0ba7a3dc25b913035e959c0876dc7f61498bd31eeaca73027453bb51f77e2ec8ab72ef6aa622db04f40fef4b0c2b4e27f367152a3b6dff0e35b6596
+  languageName: node
+  linkType: hard
+
+"react-native-modal-datetime-picker@npm:^18.0.0":
+  version: 18.0.0
+  resolution: "react-native-modal-datetime-picker@npm:18.0.0"
+  dependencies:
+    prop-types: ^15.7.2
+  peerDependencies:
+    "@react-native-community/datetimepicker": ">=6.7.0"
+    react-native: ">=0.65.0"
+  checksum: 30d28a8e599c7a36df4c3e93928aa246087edb95a82a98cb1162b045d18db47447c4e28a89190c83a8258f080066531b2b67805a9aeb007b135d62abfccf8c4c
+  languageName: node
+  linkType: hard
+
+"react-native-otp-inputs@npm:^7.4.0":
+  version: 7.4.0
+  resolution: "react-native-otp-inputs@npm:7.4.0"
+  peerDependencies:
+    "@react-native-clipboard/clipboard": "*"
+    react: "*"
+    react-native: "*"
+  checksum: 4c1398e4ee0969fd55edb58ff89f7fd23fe8b22aab6e0b96ed07e2a7744c9fa98f3e5f1ffdf019af2a2cbc5505eab1f15c13f020ce278400dc11cddbd6e9b7aa
+  languageName: node
+  linkType: hard
+
+"react-native-otp-textinput@npm:^1.1.6":
+  version: 1.1.6
+  resolution: "react-native-otp-textinput@npm:1.1.6"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 8527954918677d196485562ca59e4e031f5bb3da6b91f397b8f045ce40f55e81d7840c35b63de79d930e3e0a48beef045ae1c00ac565d8fba34371516e4d374b
+  languageName: node
+  linkType: hard
+
+"react-native-paper-dropdown@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "react-native-paper-dropdown@npm:2.3.1"
+  dependencies:
+    react-native-paper: ^5.12.3
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+    react-native-paper: "*"
+  checksum: ee8a25d3ea240f44b5172b8dd75333bcea1feb438326bd9f4d148bd01259059f822c4cba89692f9e5583aee9ff8ce64de68b37a3b5d6370b739651947a3eccc4
+  languageName: node
+  linkType: hard
+
+"react-native-paper@npm:^5.12.3, react-native-paper@npm:^5.12.5":
   version: 5.12.5
   resolution: "react-native-paper@npm:5.12.5"
   dependencies:
@@ -8732,7 +8790,12 @@ __metadata:
     prettier: 2.8.8
     react: 18.3.1
     react-native: 0.75.2
+    react-native-element-dropdown: ^2.12.1
+    react-native-modal-datetime-picker: ^18.0.0
+    react-native-otp-inputs: ^7.4.0
+    react-native-otp-textinput: ^1.1.6
     react-native-paper: ^5.12.5
+    react-native-paper-dropdown: ^2.3.1
     react-native-safe-area-context: ^4.10.9
     react-native-screens: ^3.34.0
     react-native-vector-icons: ^10.1.0

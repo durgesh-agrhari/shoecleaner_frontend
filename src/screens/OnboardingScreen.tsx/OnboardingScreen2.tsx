@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import {StyleSheet, View, Image, Text, Touchable, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, Image, Text, Touchable, TouchableOpacity, SafeAreaView} from 'react-native';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
 
 
@@ -7,19 +7,21 @@ const OnboardingScreen2: React.FC = () => {
   const navigation = useNavigation<NavigationProp<any>>();
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View>
       <View style={styles.skip}>
-        <TouchableOpacity>
-        <Text style={{fontSize:20, fontWeight:'600'}}>Skip</Text>
+        <TouchableOpacity  onPress={() => {
+              navigation.navigate('BottomTabs');
+            }}>
+        <Text style={{fontSize:20, fontWeight:'900', color:'black'}}>Skip</Text>
         </TouchableOpacity>
       </View>
       <Image
-        source={require('../../assets/c2.jpg')}
+        source={require('../../assets/a2.jpg')}
         style={styles.image}
       />
-      <Text style={{fontSize:17,textAlign:'center', fontWeight:'900'}}>Lorem ipsum dolor sit amet consectetur.</Text>
-      <Text style={{fontSize:17,textAlign:'center', fontWeight:'900'}}> Odio mauris amet vel tellus turpis.</Text>
+      <Text style={{fontSize:17,textAlign:'center', fontWeight:'900',color:'black', marginTop:20}}>Lorem ipsum dolor sit amet consectetur.</Text>
+      <Text style={{fontSize:17,textAlign:'center', fontWeight:'900', color:'black'}}> Odio mauris amet vel tellus turpis.</Text>
       
       <TouchableOpacity style={styles.btn}  onPress={() => {
         navigation.navigate("OnboardingScreen3");
@@ -30,7 +32,7 @@ const OnboardingScreen2: React.FC = () => {
       </Text>
       </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -39,7 +41,7 @@ export default OnboardingScreen2;
 const styles = StyleSheet.create({
   container: {
     // flex: 1,
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -55,7 +57,7 @@ const styles = StyleSheet.create({
     padding:8,
   },
   skip:{
-    marginTop:20,
+    marginTop:60,
     marginLeft:320
   },
   btn:{

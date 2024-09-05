@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 24,
     fontWeight: 'bold',
-    padding: 10,
+    padding: 15,
   },
   searchInput: {
     marginBottom: 16,
